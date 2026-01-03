@@ -14,11 +14,25 @@
         color: #eaecef;
         overflow-x: hidden;
       }
+      #root:empty::before {
+        content: 'Initializing Secure Earning Environment...';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: #fcd535;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.8rem;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
       .font-mono { font-family: 'JetBrains+Mono', monospace; }
       .binance-yellow { color: #fcd535; }
       .binance-bg-yellow { background-color: #fcd535; }
       
-      /* Glassmorphism */
       .glass {
         background: rgba(30, 35, 41, 0.7);
         backdrop-filter: blur(12px);
@@ -26,7 +40,6 @@
         border: 1px solid rgba(255, 255, 255, 0.05);
       }
       
-      /* Animations */
       @keyframes float {
         0% { transform: translateY(0px); }
         50% { transform: translateY(-10px); }
@@ -46,14 +59,12 @@
       }
       .animate-glow { animation: glow 3s infinite; }
 
-      /* Ticker animation */
       @keyframes ticker {
         0% { transform: translateX(100%); }
         100% { transform: translateX(-100%); }
       }
       .animate-ticker { animation: ticker 30s linear infinite; }
 
-      /* Custom scrollbar */
       ::-webkit-scrollbar { width: 6px; }
       ::-webkit-scrollbar-track { background: #0b0e11; }
       ::-webkit-scrollbar-thumb { background: #2b3139; border-radius: 10px; }
@@ -72,6 +83,19 @@
   }
 }
 </script>
+    <script>
+      // Global error handler for debugging GitHub Pages black screen
+      window.onerror = function(message, source, lineno, colno, error) {
+        console.error('Global Error:', message, 'at', source, 'line', lineno);
+        const root = document.getElementById('root');
+        if (root && root.innerHTML === '') {
+          root.innerHTML = '<div style="padding: 20px; color: #f44336; font-family: monospace;">' +
+                           '<h2 style="color: #fcd535">Platform Error</h2>' +
+                           '<p>' + message + '</p>' +
+                           '<p>Please check console for details.</p></div>';
+        }
+      };
+    </script>
   </head>
   <body>
     <div id="root"></div>
