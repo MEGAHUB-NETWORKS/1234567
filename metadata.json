@@ -1,0 +1,7 @@
+{
+  "name": "Binance Earn Hub",
+  "description": "A professional earning simulation platform where users can earn $20/hour by completing AI-driven tasks, with a specialized Binance USD withdrawal portal.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
