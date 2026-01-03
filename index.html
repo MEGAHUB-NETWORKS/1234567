@@ -4,98 +4,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Binance Earn Hub - Elite Professional Platform</title>
+    <title>NeuralNet | High-Frequency Tech Intelligence</title>
+    <meta name="description" content="Stay ahead with NeuralNet - the ultimate authority on AI trends, blockchain scalability, and quantum computing frontiers.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
+      :root {
+        --neon-cyan: #06b6d4;
+        --neon-purple: #a855f7;
+      }
       body {
-        font-family: 'Inter', sans-serif;
-        background-color: #0b0e11;
-        color: #eaecef;
+        font-family: 'Space Grotesk', sans-serif;
+        background-color: #030712;
+        color: #f3f4f6;
+        scroll-behavior: smooth;
         overflow-x: hidden;
       }
-      #root:empty::before {
-        content: 'Initializing Secure Earning Environment...';
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        color: #fcd535;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        font-size: 0.8rem;
-        animation: pulse 2s infinite;
-      }
-      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-
       .font-mono { font-family: 'JetBrains+Mono', monospace; }
-      .binance-yellow { color: #fcd535; }
-      .binance-bg-yellow { background-color: #fcd535; }
-      
       .glass {
-        background: rgba(30, 35, 41, 0.7);
+        background: rgba(17, 24, 39, 0.7);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.05);
       }
-      
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
+      .neon-border {
+        border: 1px solid rgba(6, 182, 212, 0.2);
+        box-shadow: 0 0 15px rgba(6, 182, 212, 0.05);
       }
-      .animate-float { animation: float 6s ease-in-out infinite; }
-      
-      @keyframes slide-up {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+      .neon-border:hover {
+        border-color: rgba(6, 182, 212, 0.5);
+        box-shadow: 0 0 25px rgba(6, 182, 212, 0.15);
       }
-      .animate-slide-up { animation: slide-up 0.5s ease-out forwards; }
-
-      @keyframes glow {
-        0%, 100% { box-shadow: 0 0 5px rgba(252, 213, 53, 0.2); }
-        50% { box-shadow: 0 0 20px rgba(252, 213, 53, 0.4); }
-      }
-      .animate-glow { animation: glow 3s infinite; }
-
       @keyframes ticker {
         0% { transform: translateX(100%); }
         100% { transform: translateX(-100%); }
       }
-      .animate-ticker { animation: ticker 30s linear infinite; }
-
-      ::-webkit-scrollbar { width: 6px; }
-      ::-webkit-scrollbar-track { background: #0b0e11; }
-      ::-webkit-scrollbar-thumb { background: #2b3139; border-radius: 10px; }
-      ::-webkit-scrollbar-thumb:hover { background: #fcd535; }
+      .animate-ticker { animation: ticker 40s linear infinite; }
     </style>
+    <!-- POPADS SCRIPT HERE -->
     <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@19.0.0",
     "react-dom": "https://esm.sh/react-dom@19.0.0",
     "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "@google/genai": "https://esm.sh/@google/genai@1.34.0",
     "framer-motion": "https://esm.sh/framer-motion@11.11.11?external=react,react-dom",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/"
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
   }
 }
 </script>
-    <script>
-      // Global error handler for debugging GitHub Pages black screen
-      window.onerror = function(message, source, lineno, colno, error) {
-        console.error('Global Error:', message, 'at', source, 'line', lineno);
-        const root = document.getElementById('root');
-        if (root && root.innerHTML === '') {
-          root.innerHTML = '<div style="padding: 20px; color: #f44336; font-family: monospace;">' +
-                           '<h2 style="color: #fcd535">Platform Error</h2>' +
-                           '<p>' + message + '</p>' +
-                           '<p>Please check console for details.</p></div>';
-        }
-      };
-    </script>
+    <script type="module" src="index.tsx"></script>
   </head>
   <body>
     <div id="root"></div>
